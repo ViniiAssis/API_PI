@@ -14,7 +14,53 @@ public class Appointment {
 
     private LocalDateTime appointmentDate;
     private String service;
-    private String status; // "PENDING", "CONFIRMED", "COMPLETED", "CANCELLED"
+    private String status;
 
-    // Getters e Setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public User getClient() {
+        return client;
+    }
+
+    public void setClient(User client) {
+        this.client = client;
+    }
+
+    public User getProfessional() {
+        return professional;
+    }
+
+    public void setProfessional(User professional) {
+        this.professional = professional;
+    }
+
+    public LocalDateTime getAppointmentDate() {
+        return appointmentDate;
+    }
+
+    public void setAppointmentDate(LocalDateTime appointmentDate) {
+        this.appointmentDate = appointmentDate;
+    }
+
+    public String getService() {
+        return service;
+    }
+
+    public void setService(String service) {
+        this.service = service;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

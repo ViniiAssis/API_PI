@@ -12,5 +12,43 @@ public class Availability {
     private LocalTime startTime;
     private LocalTime endTime;
 
-    // Getters e Setters
+    public Long getId() {
+        return id;
+    }
+
+    public User getProfessional() {
+        return professional;
+    }
+
+    public DayOfWeek getDayOfWeek() {
+        return dayOfWeek;
+    }
+
+    public LocalTime getStartTime() {
+        return startTime;
+    }
+
+    public LocalTime getEndTime() {
+        return endTime;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setProfessional(User professional) {
+        this.professional = professional;
+    }
+
+    public void setDayOfWeek(DayOfWeek dayOfWeek) {
+        this.dayOfWeek = dayOfWeek;
+    }
+
+    public void setStartTime(LocalTime startTime) {
+        this.startTime = startTime;
+    }
+
+    public void setEndTime(LocalTime endTime) {
+        this.endTime = endTime;
+    }
 }
