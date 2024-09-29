@@ -1,3 +1,8 @@
+import jakarta.persistence.*;
+import org.apache.catalina.User;
+
+import java.time.LocalDateTime;
+
 @Entity
 public class Appointment {
     @Id

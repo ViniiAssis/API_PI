@@ -1,3 +1,6 @@
+import org.springframework.stereotype.Service;
+import service.Appointment;
+
 @Service
 public class PaymentService {
 

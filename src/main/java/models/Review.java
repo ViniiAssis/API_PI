@@ -1,3 +1,6 @@
+import jakarta.persistence.*;
+import org.apache.catalina.User;
+
 @Entity
 public class Review {
     @Id

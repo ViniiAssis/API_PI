@@ -1,3 +1,9 @@
+import controller.Availability;
+import controller.AvailabilityRequest;
+import org.hibernate.mapping.List;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
 @RestController
 @RequestMapping("/api/professionals")
 public class ProfessionalController {

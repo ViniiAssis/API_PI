@@ -1,3 +1,9 @@
+import jakarta.persistence.*;
+import org.apache.catalina.User;
+
+import java.time.DayOfWeek;
+import java.time.LocalTime;
+
 @Entity
 public class Availability {
     @Id
