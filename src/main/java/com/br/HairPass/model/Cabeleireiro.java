@@ -4,12 +4,13 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Servico {
+public class Cabeleireiro {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,18 +18,9 @@ public class Servico {
 
     private String nome;
 
-    private Double preco;
+    private String especialidade;
 
-    private Boolean complexo;
-
-    @ManyToOne
-    @JoinColumn(name = "cabeleireiro_id")
-    private Cabeleireiro cabeleireiro;
-
-    @ManyToOne
-    @JoinColumn(name = "plano_assinatura_id")
-    private PlanoAssinatura planoAssinatura;
+    @OneToMany(mappedBy = "cabeleireiro", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Servico> servicos;
 }
-
-
 

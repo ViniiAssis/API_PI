@@ -1,15 +1,18 @@
 package com.br.HairPass.model;
 
+package com.example.hairapp.model;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Servico {
+public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,18 +20,18 @@ public class Servico {
 
     private String nome;
 
-    private Double preco;
+    private String email;
 
-    private Boolean complexo;
+    private String telefone;
 
-    @ManyToOne
-    @JoinColumn(name = "cabeleireiro_id")
-    private Cabeleireiro cabeleireiro;
+    @Embedded
+    private Localizacao localizacao;
+
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Agendamento> agendamentos;
 
     @ManyToOne
     @JoinColumn(name = "plano_assinatura_id")
     private PlanoAssinatura planoAssinatura;
 }
-
-
 

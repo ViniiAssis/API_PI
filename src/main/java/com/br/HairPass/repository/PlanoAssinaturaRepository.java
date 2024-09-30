@@ -1,9 +1,10 @@
 package com.br.HairPass.repository;
 
-import com.br.HairPass.model.Servico;
+import com.br.HairPass.model.PlanoAssinatura;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ServicoRepository extends JpaRepository<Servico, Long> {
+public interface PlanoAssinaturaRepository extends JpaRepository<PlanoAssinatura, Long> {
 }
+

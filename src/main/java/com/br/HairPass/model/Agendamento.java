@@ -1,39 +1,37 @@
 package com.br.HairPass.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Future;
-import jakarta.validation.constraints.NotNull;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-@Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@NoArgsConstructor
+@Entity
 public class Agendamento {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "cliente_id", nullable = false)
-    @NotNull(message = "O cliente é obrigatório")
-    private Usuario cliente;
+    @JoinColumn(name = "cliente_id")
+    private Cliente cliente;
 
     @ManyToOne
-    @JoinColumn(name = "cabeleireiro_id", nullable = false)
-    @NotNull(message = "O cabeleireiro é obrigatório")
-    private Usuario cabeleireiro;
-
-    @ManyToOne
-    @JoinColumn(name = "servico_id", nullable = false)
-    @NotNull(message = "O serviço é obrigatório")
+    @JoinColumn(name = "servico_id")
     private Servico servico;
 
-    @NotNull(message = "A data e hora do agendamento são obrigatórias")
-    @Future(message = "A data do agendamento deve ser no futuro")
+    @ManyToOne
+    @JoinColumn(name = "cabeleireiro_id")
+    private Cabeleireiro cabeleireiro;
+
     private LocalDateTime dataHora;
+
+    @Embedded
+    private Localizacao localizacaoCliente;
 }
 
